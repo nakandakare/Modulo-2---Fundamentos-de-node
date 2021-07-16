@@ -9,23 +9,10 @@ const cantMax = 10;
 let resultados = '';
 
 //Creamos una funcion reutilizable con validaciones para imprimir el resultado. 
-const concatenarMultiplicacion = (numeroFijo, num) => {
-    if (!numeroFijo || !num) {
-        console.log('Error: No se encontraron los numeros para multiplicar.');
-        return;
+const concatenarMultiplicacion = () => {
+    for (let i = 1; i <= cantMax; i++) {
+        resultados += `${numeroFijo} x ${i} = ${numeroFijo * i}\n`
     }
-
-    if (isNaN(numeroFijo) || isNaN(num)) {
-        console.log('Error: Compruebe que los argumentos sean numeros.');
-        return;
-    }
-
-    resultados += `${numeroFijo} x ${num} = ${numeroFijo * num}\n`
-}
-
-//Realizamos la iteración.
-for (let i = 1; i <= cantMax; i++) {
-    concatenarMultiplicacion(numeroFijo, i);
 }
 
 //Generamos y guardamos el archivo Txt tratando como Promesas.
@@ -37,5 +24,7 @@ const generarArchivoAsync = async () => {
         console.log('Error al generar el archivo', err);
     }
 }
+
+concatenarMultiplicacion();
 
 generarArchivoAsync();
