@@ -9,7 +9,7 @@ const cantMax = 10;
 let resultados = '';
 
 //Creamos una funcion reutilizable con validaciones para imprimir el resultado. 
-const imprimirMultiplicacion = (numeroFijo, num) => {
+const concatenarMultiplicacion = (numeroFijo, num) => {
     if (!numeroFijo || !num) {
         console.log('Error: No se encontraron los numeros para multiplicar.');
         return;
@@ -25,7 +25,7 @@ const imprimirMultiplicacion = (numeroFijo, num) => {
 
 //Realizamos la iteración.
 for (let i = 1; i <= cantMax; i++) {
-    imprimirMultiplicacion(numeroFijo, i);
+    concatenarMultiplicacion(numeroFijo, i);
 }
 
 //Generamos y guardamos el archivo Txt tratando como Promesas.
