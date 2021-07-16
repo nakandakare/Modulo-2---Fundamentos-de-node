@@ -6,24 +6,13 @@ const cantMax = 10;
 let resultado = '';
 
 //Creamos una funcion reutilizable con validaciones para concatenar el resultado. 
-const concatenarMultiplicacion = (numeroFijo, num) => {
-    if (!numeroFijo || !num) {
-        console.log('Error: No se encontraron los numeros para multiplicar.');
-        return;
+const concatenarMultiplicacion = () => {
+    for (let i = 1; i <= cantMax; i++) {
+        resultado += `${numeroFijo} x ${i} = ${numeroFijo * i}\n`
     }
-
-    if (isNaN(numeroFijo) || isNaN(num)) {
-        console.log('Error: Compruebe que los argumentos sean numeros.');
-        return;
-    }
-
-    resultado += `${numeroFijo} x ${num} = ${numeroFijo * num}\n`
 }
 
-//Realizamos la iteración.
-for (let i = 1; i <= cantMax; i++) {
-    concatenarMultiplicacion(numeroFijo, i);
-}
+concatenarMultiplicacion();
 
 //Mostramos el resultado con el console.log
 console.log(resultado);
