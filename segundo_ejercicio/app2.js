@@ -2,16 +2,16 @@
 const fs = require('fs');
 
 //Seteamos un valor por el cual vamos a multiplicar 
-const numeroFijo = 5;
+const base = 5;
 //Seteamos la cantidad de veces que vamos a multiplicar
 const cantMax = 10;
 //Creamos una variable para concatear los resultados.
 let resultados = '';
 
 //Creamos una funcion reutilizable con validaciones para imprimir el resultado. 
-const concatenarMultiplicacion = () => {
+const concatenarMultiplicacion = (base = 5) => {
     for (let i = 1; i <= cantMax; i++) {
-        resultados += `${numeroFijo} x ${i} = ${numeroFijo * i}\n`
+        resultados += `${base} x ${i} = ${base * i}\n`
     }
 }
 
@@ -24,7 +24,7 @@ const generarArchivo = (fileName, dato) => {
       });
 }
 
-concatenarMultiplicacion();
+concatenarMultiplicacion(base);
 
 //Generamos y guardamos el archivo Txt.
-generarArchivo('tabla-5.txt', resultados);
+generarArchivo(`tabla-${base}.txt`, resultados);
